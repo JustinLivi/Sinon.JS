@@ -101,6 +101,24 @@
                 clock = sinon.useFakeTimers(new Date("2015-1-5").getTime());
                 assert.equals(clock.now, Date.now());
             }
+        },
+
+        "#738": {
+            "es6-promises should resolve": function () {
+
+                var clock = sinon.useFakeTimers();
+                var spy = sinon.spy();
+
+                new Promise(function (resolve) {
+                    setTimeout(resolve, 10);
+                }).then(spy);
+
+                // FAILS
+                clock.tick(11);
+                assert(spy.called);
+
+                clock.restore();
+            }
         }
     });
 }(this));

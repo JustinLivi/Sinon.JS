@@ -4,6 +4,7 @@ config.packaged = {
     environment: "browser",
     rootPath: "../",
     libs: [
+        "node_modules/es6-promise/dist/es6-promise.js",
         "node_modules/samsam/lib/samsam.js"
     ],
     sources: [

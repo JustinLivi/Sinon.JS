@@ -4,6 +4,7 @@ config.browser = {
     environment: "browser",
     rootPath: "../",
     libs: [
+        "node_modules/es6-promise/dist/es6-promise.js",
         "node_modules/lolex/lolex.js",
         "node_modules/samsam/lib/samsam.js",
         "node_modules/formatio/lib/formatio.js"
